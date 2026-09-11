@@ -412,7 +412,7 @@ function EndPage() {
 /* ---------------- shell ---------------- */
 
 function markProps(i: number) {
-  const c = CHAPTERS[i];
+  const c = CHAPTERS[i]!;
   return { number: c.n, deva: c.deva, english: c.en };
 }
 

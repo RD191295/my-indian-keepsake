@@ -34,12 +34,15 @@ export function Book() {
   }, [next, prev]);
 
   const onTouchStart = (e: React.TouchEvent) => {
-    touch.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    const t = e.touches[0];
+    if (t) touch.current = { x: t.clientX, y: t.clientY };
   };
   const onTouchEnd = (e: React.TouchEvent) => {
     if (!touch.current) return;
-    const dx = e.changedTouches[0].clientX - touch.current.x;
-    const dy = e.changedTouches[0].clientY - touch.current.y;
+    const t = e.changedTouches[0];
+    if (!t) return;
+    const dx = t.clientX - touch.current.x;
+    const dy = t.clientY - touch.current.y;
     touch.current = null;
     if (Math.abs(dx) < 45 || Math.abs(dx) < Math.abs(dy)) return;
     if (dx < 0) next();
@@ -141,7 +144,7 @@ function DesktopBook({
           if (i % 2) return null;
           const leafIndex = i / 2;
           const isFlipped = leafIndex < flipped;
-          const front = PAGES[i];
+          const front = PAGES[i]!;
           const back = PAGES[i + 1];
           return (
             <div
@@ -192,7 +195,7 @@ function MobileBook({
   onNext: () => void;
   onPrev: () => void;
 }) {
-  const current = PAGES[page];
+  const current = PAGES[page] ?? PAGES[0]!;
   return (
     <div className="book-stage w-full px-5">
       <div className="relative mx-auto aspect-[3/4] w-full max-w-sm">
