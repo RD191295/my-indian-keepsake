@@ -136,9 +136,18 @@ function DesktopBook({
         style={{ transform: shift, transformStyle: "preserve-3d" }}
       >
         {/* board / stack under the leaves */}
-        <div className="absolute inset-y-0 left-0 w-1/2 bg-maroon-deep shadow-[var(--shadow-page)]" />
-        <div className="absolute inset-y-0 right-0 w-1/2 bg-maroon-deep shadow-[var(--shadow-page)]" />
-        <div className="absolute inset-y-2 left-1/2 w-6 -translate-x-1/2 bg-linear-to-r from-maroon-deep via-brown/60 to-maroon-deep opacity-80" />
+        <div
+          className="absolute inset-y-0 left-0 w-1/2 bg-maroon-deep shadow-[var(--shadow-page)] transition-opacity duration-300"
+          style={{ opacity: closed ? 0 : 1 }}
+        />
+        <div
+          className="absolute inset-y-0 right-0 w-1/2 bg-maroon-deep shadow-[var(--shadow-page)] transition-opacity duration-300"
+          style={{ opacity: finished ? 0 : 1 }}
+        />
+        <div
+          className="absolute inset-y-2 left-1/2 w-6 -translate-x-1/2 bg-linear-to-r from-maroon-deep via-brown/60 to-maroon-deep transition-opacity duration-300"
+          style={{ opacity: closed || finished ? 0 : 0.8 }}
+        />
 
         {PAGES.map((_, i) => {
           if (i % 2) return null;
