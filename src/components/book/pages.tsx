@@ -361,7 +361,7 @@ function QuizPage() {
 function AboutYouPage() {
   return (
     <PageShell>
-      <div className="grid-paper/0 flex h-full flex-col justify-center gap-5">
+      <div className="flex h-full flex-col justify-center gap-5">
         <ChapterMark {...markProps(8)} />
         <div className="space-y-3 px-2">
           {Array.from({ length: 4 }).map((_, i) => (
