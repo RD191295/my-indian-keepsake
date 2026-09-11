@@ -5,17 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Design system definition.
- *
- * The @theme inline block maps CSS custom properties to Tailwind utility
- * classes (e.g. --color-primary -> bg-primary, text-primary).
- *
- * The :root and .dark blocks define the actual color values using oklch.
- * All colors MUST use oklch format.
- *
- * To add a new semantic color:
- * 1. Add the variable to :root (light value) and .dark (dark value)
- * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ * "Ek Chhoti Si Kahaani" — handmade Indian keepsake book design system.
+ * All colours are oklch tokens. Never hardcode colours in components.
  */
 
 @theme inline {
@@ -45,91 +36,71 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-ring-offset-background: var(--background);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* keepsake palette */
+  --color-paper: var(--paper);
+  --color-paper-deep: var(--paper-deep);
+  --color-paper-edge: var(--paper-edge);
+  --color-maroon: var(--maroon);
+  --color-maroon-deep: var(--maroon-deep);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-saffron: var(--saffron);
+  --color-brown: var(--brown);
+  --color-leafgreen: var(--leafgreen);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-hand: "Caveat", cursive;
+  --font-deva: "Tiro Devanagari Hindi", serif;
+  --font-guj: "Mukta Vaani", sans-serif;
+  --font-sans: "Karla", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
-}
+  --radius: 0.25rem;
 
-.dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
+  --paper: oklch(0.955 0.018 88);
+  --paper-deep: oklch(0.918 0.026 85);
+  --paper-edge: oklch(0.865 0.032 82);
+  --maroon: oklch(0.372 0.108 20);
+  --maroon-deep: oklch(0.268 0.082 22);
+  --gold: oklch(0.706 0.098 82);
+  --gold-soft: oklch(0.826 0.062 88);
+  --saffron: oklch(0.744 0.128 62);
+  --brown: oklch(0.352 0.042 55);
+  --leafgreen: oklch(0.482 0.052 145);
+  --ink: oklch(0.298 0.032 50);
+  --ink-soft: oklch(0.482 0.028 55);
+
+  --background: oklch(0.238 0.028 40);
+  --foreground: var(--ink);
+  --card: var(--paper);
+  --card-foreground: var(--ink);
+  --popover: var(--paper);
+  --popover-foreground: var(--ink);
+  --primary: var(--maroon);
+  --primary-foreground: var(--paper);
+  --secondary: var(--paper-deep);
+  --secondary-foreground: var(--ink);
+  --muted: var(--paper-deep);
+  --muted-foreground: var(--ink-soft);
+  --accent: var(--gold);
+  --accent-foreground: var(--maroon-deep);
+  --destructive: oklch(0.52 0.16 27);
+  --destructive-foreground: var(--paper);
+  --border: var(--paper-edge);
+  --input: var(--paper-edge);
+  --ring: var(--gold);
+
+  --shadow-page: 0 24px 60px -18px oklch(0 0 0 / 0.55);
+  --gradient-cover: linear-gradient(
+    135deg,
+    var(--maroon-deep) 0%,
+    var(--maroon) 45%,
+    var(--maroon-deep) 100%
+  );
 }
 
 @layer base {
@@ -140,5 +111,141 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    background-image:
+      radial-gradient(circle at 50% 0%, oklch(0.32 0.03 45 / 0.9), transparent 60%),
+      radial-gradient(circle at 50% 100%, oklch(0.2 0.02 40 / 0.9), transparent 55%);
   }
+}
+
+/* ---------- paper + book surfaces ---------- */
+
+@utility paper-surface {
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(circle at 18% 22%, oklch(0.86 0.05 75 / 0.16), transparent 32%),
+    radial-gradient(circle at 82% 78%, oklch(0.86 0.05 75 / 0.14), transparent 34%),
+    var(--paper-fibers);
+  background-blend-mode: multiply, multiply, multiply;
+  background-size:
+    cover,
+    cover,
+    420px 420px;
+}
+
+@utility page-shade-right {
+  background-image: linear-gradient(
+    to left,
+    oklch(0.4 0.04 50 / 0.28) 0%,
+    oklch(0.4 0.04 50 / 0.06) 4%,
+    transparent 12%
+  );
+}
+
+@utility page-shade-left {
+  background-image: linear-gradient(
+    to right,
+    oklch(0.4 0.04 50 / 0.28) 0%,
+    oklch(0.4 0.04 50 / 0.06) 4%,
+    transparent 12%
+  );
+}
+
+@utility cover-surface {
+  background-image: var(--gradient-cover);
+  box-shadow:
+    inset 0 0 90px oklch(0 0 0 / 0.45),
+    inset 0 1px 0 oklch(1 0 0 / 0.08);
+}
+
+@utility gold-rule {
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    var(--gold) 20%,
+    var(--gold) 80%,
+    transparent
+  );
+}
+
+@utility tape-strip {
+  background-color: oklch(0.85 0.05 85 / 0.55);
+  box-shadow: 0 1px 3px oklch(0 0 0 / 0.18);
+}
+
+@utility ink-underline {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 1.75rem,
+    var(--paper-edge) 1.75rem,
+    var(--paper-edge) calc(1.75rem + 1px)
+  );
+}
+
+@utility grid-paper {
+  background-image:
+    linear-gradient(var(--paper-edge) 1px, transparent 1px),
+    linear-gradient(90deg, var(--paper-edge) 1px, transparent 1px);
+  background-size: 1.25rem 1.25rem;
+  opacity: 1;
+}
+
+/* ---------- book mechanics ---------- */
+
+@utility book-stage {
+  perspective: 2600px;
+  perspective-origin: 50% 45%;
+}
+
+@utility leaf-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+@keyframes page-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(26px) rotateY(-9deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotateY(0deg);
+  }
+}
+
+@keyframes page-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-26px) rotateY(9deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotateY(0deg);
+  }
+}
+
+@keyframes soft-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility anim-page-right {
+  animation: page-in-right 0.42s cubic-bezier(0.22, 0.8, 0.3, 1);
+}
+
+@utility anim-page-left {
+  animation: page-in-left 0.42s cubic-bezier(0.22, 0.8, 0.3, 1);
+}
+
+@utility anim-rise {
+  animation: soft-rise 0.5s ease-out both;
 }
