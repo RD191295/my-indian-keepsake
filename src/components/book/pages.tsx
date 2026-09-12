@@ -63,11 +63,11 @@ function CoverPage() {
         <OrnamentDivider width="w-44" />
       </div>
 
-      <p className="font-display relative max-w-[24ch] text-[0.9rem] leading-[1.9] tracking-[0.06em] text-gold-soft/60 italic">
+      <p className="font-display relative max-w-[24ch] text-[0.82rem] leading-[1.8] tracking-[0.04em] text-gold-soft/60 italic">
         Four months. A few conversations. Many little memories.
       </p>
-
-      <p className="gold-foil font-guj absolute bottom-9 text-[0.78rem] tracking-[0.2em] opacity-80">
+      
+      <p className="gold-foil font-guj absolute bottom-6 text-[0.72rem] tracking-[0.16em] opacity-80">
         એક નાની યાદોની ડાયરી
       </p>
     </div>
