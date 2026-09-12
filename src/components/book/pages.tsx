@@ -49,9 +49,10 @@ function CoverPage() {
         a keepsake
       </p>
 
-      <h1 className="gold-foil font-deva relative mt-10 text-[2.1rem] leading-[1.7] sm:text-[2.6rem]">
-        एक छोटी सी कहानी
-      </h1>
+    <h1 className="gold-foil font-deva relative mt-10 text-[2.1rem] leading-[1.35] sm:text-[2.6rem]">
+      <span className="block whitespace-nowrap">एक छोटी सी</span>
+      <span className="block whitespace-nowrap">कहानी</span>
+    </h1>
 
       <p className="gold-foil font-display relative mt-6 text-[0.95rem] tracking-[0.42em] uppercase">
         Ek Chhoti Si Kahaani
