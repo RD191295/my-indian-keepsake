@@ -45,10 +45,6 @@ function CoverPage() {
       <div className="pointer-events-none absolute inset-5 border border-gold/30" />
       <div className="pointer-events-none absolute inset-[27px] border border-gold/14" />
 
-      <p className="gold-foil font-sans relative text-[0.55rem] tracking-[0.62em] uppercase">
-        a keepsake
-      </p>
-
     <h1 className="gold-foil font-deva relative mt-10 text-[2.1rem] leading-[1.35] sm:text-[2.6rem]">
       <span className="block whitespace-nowrap">एक छोटी सी</span>
       <span className="block whitespace-nowrap">कहानी</span>
