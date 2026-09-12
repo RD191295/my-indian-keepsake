@@ -32,18 +32,11 @@ const stop = (e: React.MouseEvent) => e.stopPropagation();
 
 export function PageShell({ children }: { children: ReactNode }) {
   return (
-    <div className="page-imperfections deckle-edge relative h-full overflow-hidden px-7 py-8 sm:px-9">
-      <div className="pointer-events-none absolute inset-0 bg-paper/20 mix-blend-multiply" />
-
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-5 bg-linear-to-r from-brown/10 to-transparent" />
-
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-3 bg-linear-to-l from-brown/5 to-transparent" />
-
-      <div className="relative z-10 h-full">
-        {children}
-      </div>
+    <div className="page-imperfections deckle-edge relative h-full px-7 py-8 sm:px-9">
+      {children}
     </div>
   );
+}
 }
 
 /* ---------------- cover ---------------- */
