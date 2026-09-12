@@ -59,17 +59,19 @@ function CoverPage() {
         <span className="block whitespace-nowrap">KAHAANI</span>
       </p>
 
-      <div className="relative mt-9 mb-8 opacity-90">
+      <div className="relative mt-8 flex flex-col items-center">
+      <div className="mb-7 opacity-90">
         <OrnamentDivider width="w-44" />
       </div>
-
-      <p className="font-display relative max-w-[24ch] text-[0.82rem] leading-[1.8] tracking-[0.04em] text-gold-soft/60 italic">
+    
+      <p className="font-display max-w-[22ch] text-[0.82rem] leading-[1.8] tracking-[0.04em] text-gold-soft/60 italic">
         Four months. A few conversations. Many little memories.
       </p>
-      
-      <p className="gold-foil font-guj absolute bottom-6 text-[0.72rem] tracking-[0.16em] opacity-80">
+    
+      <p className="gold-foil font-guj mt-10 text-[0.72rem] tracking-[0.16em] opacity-80">
         એક નાની યાદોની ડાયરી
       </p>
+    </div>
     </div>
   );
 }
