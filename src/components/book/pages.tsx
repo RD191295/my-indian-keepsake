@@ -54,8 +54,9 @@ function CoverPage() {
       <span className="block whitespace-nowrap">कहानी</span>
     </h1>
 
-      <p className="gold-foil font-display relative mt-6 text-[0.95rem] tracking-[0.42em] uppercase">
-        Ek Chhoti Si Kahaani
+      <p className="gold-foil font-display relative mt-6 text-[0.82rem] leading-relaxed tracking-[0.28em] uppercase sm:text-[0.95rem]">
+        <span className="block whitespace-nowrap">EK CHHOTI SI</span>
+        <span className="block whitespace-nowrap">KAHAANI</span>
       </p>
 
       <div className="relative mt-9 mb-8 opacity-90">
